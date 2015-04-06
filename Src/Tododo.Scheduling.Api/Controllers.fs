@@ -1,9 +1,9 @@
 ﻿namespace Tododo.Scheduling.Api
 
 open System
-open System.Web.Http
-open System.Net.Http
 open System.Net
+open System.Net.Http
+open System.Web.Http
 open Tododo.Scheduling.Domain
 open Tododo.Scheduling.Errors
 open Tododo.Shared.ROP

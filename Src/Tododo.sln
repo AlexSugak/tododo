@@ -11,7 +11,7 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Tododo.Api.Host.Console", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{E23CD921-154B-4841-A29A-07B3A52C2336}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Tododo.Scheduling.Api.Tests", "Tododo.Scheduling.Api.Tests\Tododo.Scheduling.Api.Tests.fsproj", "{EE7B321F-143E-4F13-8301-74EF51025707}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Tododo.Scheduling.Api.Tests", "Tests\Tododo.Scheduling.Api.Tests\Tododo.Scheduling.Api.Tests.fsproj", "{EE7B321F-143E-4F13-8301-74EF51025707}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

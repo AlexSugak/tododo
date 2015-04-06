@@ -2,11 +2,11 @@
 
 open System
 open Tododo.Scheduling.Errors
+open Tododo.Scheduling.Api
+open Tododo.Shared.ROP
+
 
 module Schedule = 
-    open Tododo.Scheduling.Api
-    open Tododo.Shared.ROP
-
     let handle (cmd: MakeAppointment) = 
         Failure(NotImplemented)
     
