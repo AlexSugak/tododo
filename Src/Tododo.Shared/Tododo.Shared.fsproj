@@ -52,7 +52,6 @@
     <Compile Include="ROP.fs" />
     <Compile Include="Messaging.fs" />
     <Compile Include="Converting.fs" />
-    <None Include="Script.fsx" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
