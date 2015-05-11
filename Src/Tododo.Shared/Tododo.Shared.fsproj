@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="ROP.fs" />
     <Compile Include="Messaging.fs" />
+    <Compile Include="Converting.fs" />
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>

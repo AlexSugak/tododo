@@ -1,4 +1,5 @@
-﻿module Tododo.Shared.Messaging
+﻿[<AutoOpen>]
+module Tododo.Shared.Messaging
 
 open System
 

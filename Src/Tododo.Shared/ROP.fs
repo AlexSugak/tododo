@@ -1,4 +1,5 @@
-﻿module Tododo.Shared.ROP
+﻿[<AutoOpen>]
+module Tododo.Shared.ROP
 
 
 type Result<'TSuccess, 'TError> = 
