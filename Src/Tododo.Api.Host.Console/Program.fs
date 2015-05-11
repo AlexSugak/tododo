@@ -2,8 +2,6 @@
 // See the 'F# Tutorial' project for more help.
 
 open Microsoft.Owin.Hosting
-open Tododo.Scheduling.Api
-open Tododo.Scheduling.Api.OwinHost
 
 [<EntryPoint>]
 let main argv = 
@@ -11,7 +9,7 @@ let main argv =
     printfn "Starting web server at [%s]" baseAddress
 
     try 
-        let app = WebApp.Start<Startup>(new StartOptions(baseAddress))
+        let app = WebApp.Start<Tododo.Scheduling.Api.OwinHost.Startup>(new StartOptions(baseAddress))
         ()
     with e -> 
         printfn "Error while starting web server\n%A" e
