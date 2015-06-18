@@ -11,7 +11,7 @@ open Tododo.Shared.ROP
 [<RoutePrefix("api/appointments")>]
 type AppointmentsController
     (
-        makeAppointmentImp : MakeAppointmentRendition -> Result<unit, Error>
+        makeAppointmentImp : MakeAppointmentModel -> Result<unit, Error>
     ) = 
     inherit ApiController()
     
@@ -24,7 +24,7 @@ type AppointmentsController
         x.Request.CreateResponse(HttpStatusCode.OK, "test appointment")
 
     [<Route("")>]
-    member x.Post(appointment: MakeAppointmentRendition) =
+    member x.Post(appointment: MakeAppointmentModel) =
         match makeAppointmentImp appointment with 
         | Failure(ValidationError msg) -> x.BadRequest msg :> IHttpActionResult
         | _ -> x.StatusCode HttpStatusCode.Accepted :> IHttpActionResult 

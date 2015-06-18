@@ -13,11 +13,11 @@ open Xunit
 let ``Post must return bad request on validation error`` () = 
     let imp _ = Failure(ValidationError("error"))
     use sut = new AppointmentsController(imp)
-    let rendition: MakeAppointmentRendition = {
+    let model: MakeAppointmentModel = {
         Date = "2015-04-06"
         ClientName = "bob"}
 
-    let result: IHttpActionResult = sut.Post rendition
+    let result: IHttpActionResult = sut.Post model
 
     test <@ result :? Results.BadRequestErrorMessageResult @>     
 
@@ -25,11 +25,11 @@ let ``Post must return bad request on validation error`` () =
 let ``Post must return Accepted on success`` () = 
     let imp _ = Success(())
     use sut = new AppointmentsController(imp)
-    let rendition: MakeAppointmentRendition = {
+    let model: MakeAppointmentModel = {
         Date = "2015-04-06"
         ClientName = "bob"}
 
-    let result: IHttpActionResult = sut.Post rendition
+    let result: IHttpActionResult = sut.Post model
 
     test <@ result 
             |> convertsTo<Results.StatusCodeResult>

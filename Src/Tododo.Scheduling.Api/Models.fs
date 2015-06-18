@@ -3,7 +3,7 @@
 open System
 
 [<CLIMutable>]
-type MakeAppointmentRendition = {
+type MakeAppointmentModel = {
     Date : string
     ClientName : string
 }

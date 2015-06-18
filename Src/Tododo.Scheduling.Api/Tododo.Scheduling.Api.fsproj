@@ -49,7 +49,7 @@
   </Choose>
   <Import Project="$(FSharpTargetsPath)" />
   <ItemGroup>
-    <Compile Include="Renditions.fs" />
+    <Compile Include="Models.fs" />
     <Compile Include="Messages.fs" />
     <Compile Include="Errors.fs" />
     <Compile Include="Validators.fs" />
