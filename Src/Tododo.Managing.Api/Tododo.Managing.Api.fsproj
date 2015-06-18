@@ -49,8 +49,13 @@
   </Choose>
   <Import Project="$(FSharpTargetsPath)" />
   <ItemGroup>
-    <Content Include="packages.config" />
+    <Compile Include="Models.fs" />
+    <Compile Include="Errors.fs" />
+    <Compile Include="Controllers.fs" />
+    <Compile Include="Infrastructure.fs" />
+    <Compile Include="OwinHost.fs" />
     <Content Include="app.config" />
+    <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Owin">
@@ -93,8 +98,6 @@
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.2\lib\net45\System.Web.Http.Owin.dll</HintPath>
       <Private>True</Private>
     </Reference>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Tododo.Shared\Tododo.Shared.fsproj">
       <Name>Tododo.Shared</Name>
       <Project>{c28aa461-fbf9-4601-a809-31015f8573f6}</Project>

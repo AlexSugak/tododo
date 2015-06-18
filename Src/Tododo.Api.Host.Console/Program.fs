@@ -5,11 +5,15 @@ open Microsoft.Owin.Hosting
 
 [<EntryPoint>]
 let main argv = 
-    let baseAddress = "http://localhost:8050"
-    printfn "Starting web server at [%s]" baseAddress
+    let schedulingApiAddress = "http://localhost:8050"
+    let managingApiAddress = "http://localhost:8051"
 
     try 
-        let app = WebApp.Start<Tododo.Scheduling.Api.OwinHost.Startup>(new StartOptions(baseAddress))
+        printfn "Starting web server at [%s]" schedulingApiAddress
+        let schedulingApi = WebApp.Start<Tododo.Scheduling.Api.OwinHost.Startup>(new StartOptions(schedulingApiAddress))
+
+        printfn "Starting web server at [%s]" managingApiAddress
+        let managingApi = WebApp.Start<Tododo.Managing.Api.OwinHost.Startup>(new StartOptions(managingApiAddress))
         ()
     with e -> 
         printfn "Error while starting web server\n%A" e

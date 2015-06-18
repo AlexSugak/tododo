@@ -84,6 +84,11 @@
     <Reference Include="System.Numerics" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Tododo.Managing.Api\Tododo.Managing.Api.fsproj">
+      <Name>Tododo.Managing.Api</Name>
+      <Project>{3f89849d-89f5-4618-a671-589f7184d66f}</Project>
+      <Private>True</Private>
+    </ProjectReference>
     <ProjectReference Include="..\Tododo.Scheduling.Api\Tododo.Scheduling.Api.fsproj">
       <Name>Tododo.Scheduling.Api</Name>
       <Project>{d2a7aae5-a6b3-43ec-9bf3-8eb0c81be9f2}</Project>
