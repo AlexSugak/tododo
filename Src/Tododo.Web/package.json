@@ -1,10 +1,30 @@
 {
-  "name": "Tododo.Web",
-  "version": "0.0.0",
-  "description": "Tododo.Web",
-  "main": "app.js",
-  "author": {
-    "name": "aleks_000",
-    "email": ""
-  }
+    "name": "Tododo.Web",
+    "version": "0.0.0",
+    "description": "Tododo.Web",
+    "main": "app.js",
+    "author": {
+        "name": "Alexandr Sugak",
+        "email": "aleksandr.sugak@gmail.com"
+    },
+    "dependencies": {
+        "body-parser": "^1.9.2",
+        "debug": "^2.1.0",
+        "express": "^4.10.2",
+        "express-state": "^1.2.0",
+        "eyes": "^0.1.8",
+        "flux-router-component": "^0.5.0",
+        "fluxible": "^0.1.1",
+        "fluxible-plugin-fetchr": "^0.2.0",
+        "fluxible-plugin-routr": "^0.3.0",
+        "node-jsx": "^0.12.0",
+        "react": "^0.12.1",
+        "request": "^2.51.0",
+        "serve-favicon": "^2.1.7",
+        "xml2js": "^0.4.4"
+    },
+    "devDependencies": {
+        "jsx-loader": "^0.12.2",
+        "webpack": "^1.4.13"
+    }
 }
