@@ -1,0 +1,10 @@
+{
+  "name": "Tododo.Web",
+  "version": "0.0.0",
+  "description": "Tododo.Web",
+  "main": "app.js",
+  "author": {
+    "name": "aleks_000",
+    "email": ""
+  }
+}
