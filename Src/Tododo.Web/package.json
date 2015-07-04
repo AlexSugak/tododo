@@ -2,7 +2,6 @@
     "name": "Tododo.Web",
     "version": "0.0.0",
     "description": "Tododo.Web",
-    "main": "app.js",
     "author": {
         "name": "Alexandr Sugak",
         "email": "aleksandr.sugak@gmail.com"
