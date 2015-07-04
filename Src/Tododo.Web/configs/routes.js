@@ -10,5 +10,17 @@ module.exports = {
         method: "get",
         page: "index",
         action: nothing
+    },
+    tasks: {
+        path: "/tasks",
+        method: "get",
+        page: "tasks",
+        action: nothing
+    },
+    employees: {
+        path: "/employees",
+        method: "get",
+        page: "employees",
+        action: nothing
     }
 };

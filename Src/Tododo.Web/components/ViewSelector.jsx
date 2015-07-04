@@ -3,15 +3,25 @@
 var React = require("react");
 
 var IndexView = require("./IndexView");
+var TasksView = require("./TasksView");
+var EmployeesView = require("./EmployeesView");
 
 var ViewSelector = React.createClass({
 	propTypes: {
-		page: React.PropTypes.string.isRequired,
+		context: React.PropTypes.object.isRequired,
+		page: React.PropTypes.string.isRequired
 	},
 
 	loadView: function(page) {
+		var context = this.props.context;
 		if (page === "index") {
-			return <IndexView />;
+			return <IndexView context={context} />;
+		}
+		if (page === "tasks") {
+			return <TasksView context={context} />;
+		}
+		if (page === "employees") {
+			return <EmployeesView context={context} />;
 		}
 
 		return (<div>{page}</div>);

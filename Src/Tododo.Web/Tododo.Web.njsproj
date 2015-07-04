@@ -34,7 +34,11 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="components\TopNav.jsx" />
+    <Content Include="webpack.config.js" />
     <TypeScriptCompile Include="Scripts\typings\node\node.d.ts" />
+    <Content Include="components\EmployeesView.jsx" />
+    <Content Include="components\TasksView.jsx" />
     <Content Include="components\IndexView.jsx" />
     <Content Include="components\ViewSelector.jsx" />
     <Content Include="components\AppPage.jsx" />

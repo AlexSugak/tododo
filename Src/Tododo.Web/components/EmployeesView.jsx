@@ -2,7 +2,7 @@
 
 var React = require("react");
 
-var IndexView = React.createClass({
+var EmployeesView = React.createClass({
 	propTypes: {
 	},
 	statics: {
@@ -22,11 +22,11 @@ var IndexView = React.createClass({
 	render: function render() {
 		return (
 			<div>
-				<h1>Index View Here</h1>
+				<h1>Employees View Here</h1>
 			</div>
 		);
 	}
 });
 
 
-module.exports = IndexView;
+module.exports = EmployeesView;

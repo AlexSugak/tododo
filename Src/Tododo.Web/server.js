@@ -20,6 +20,8 @@ var server = express();
 
 expressState.extend(server);
 
+server.use("/public", express.static(path.join(__dirname, "build")));
+server.use("/css", express.static(path.join(__dirname, "node_modules/bootstrap/dist/css")));
 server.use(bodyParser.json());
 
 function handleError(err, next) {
@@ -48,6 +50,7 @@ server.use(function (req, res, next) {
         debug("Rendering Application component into html");
         var AppComponent = app.getAppComponent();
         var html = react.renderToStaticMarkup(htmlComponent({
+            title: "Tododo",
             state: res.locals.state,
             context: context.getComponentContext(),
             markup: react.renderToString(AppComponent({

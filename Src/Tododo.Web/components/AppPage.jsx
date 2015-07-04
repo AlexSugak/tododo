@@ -6,6 +6,7 @@ var RouterMixin = require('flux-router-component').RouterMixin;
 var AppStore = require("../stores/AppStore");
 var StoreMixin = require("fluxible").StoreMixin;
 var ViewSelector = require("./ViewSelector");
+var TopNav = require("./TopNav");
 var debug = require("debug")("app");
 
 var AppPage = React.createClass({
@@ -39,8 +40,9 @@ var AppPage = React.createClass({
 		var params = this.state.route.params;
 
 		return (
-			<div className="row">
-				<div className="small-9 columns">
+			<div className="container">
+				<TopNav context={context} projectName="Tododo" />
+				<div className="jumbotron">
 					<ViewSelector context={context} page={page} params={params} />
 				</div>
 			</div>

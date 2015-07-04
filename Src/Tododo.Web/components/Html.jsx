@@ -14,14 +14,13 @@ var Html = React.createClass({
 					<meta charSet="utf-8" />
 					<title>{this.props.title}</title>
 					<meta name="viewport" content="width=device-width, user-scalable=no" />
-					<link rel="stylesheet" href="/css/foundation.css" />
-					<link rel="stylesheet" href="/css/base.css" />
+					<link rel="stylesheet" href="/css/bootstrap.min.css" />
 				</head>
 				<body>
 				<div id="app" dangerouslySetInnerHTML={{__html: this.props.markup}}></div>
 			</body>
 			<script dangerouslySetInnerHTML={{__html: this.props.state}}></script>
-			<script src="/client.js" defer></script>
+			<script src="/public/js/client.js" defer></script>
 			</html>
 		);
 	}
