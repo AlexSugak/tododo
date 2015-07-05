@@ -15,6 +15,7 @@ var Html = React.createClass({
 					<title>{this.props.title}</title>
 					<meta name="viewport" content="width=device-width, user-scalable=no" />
 					<link rel="stylesheet" href="/css/bootstrap.min.css" />
+					<link rel="stylesheet" href="/css/custom.css" />
 				</head>
 				<body>
 				<div id="app" dangerouslySetInnerHTML={{__html: this.props.markup}}></div>
