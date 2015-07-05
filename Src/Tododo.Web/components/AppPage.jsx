@@ -17,6 +17,9 @@ var AppPage = React.createClass({
 		context: React.PropTypes.object.isRequired
 	},
 	statics: {
+		storeListeners: {
+			_onChange: [AppStore]
+		}
 	},
 	getInitialState: function getInitialState() {
 		return this.getStateFromStores();
@@ -41,7 +44,7 @@ var AppPage = React.createClass({
 
 		return (
 			<div className="container">
-				<TopNav context={context} projectName="Tododo" />
+				<TopNav context={context} projectName="Tododo" route={page} />
 				<div className="jumbotron">
 					<ViewSelector context={context} page={page} params={params} />
 				</div>
