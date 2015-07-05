@@ -184,3 +184,7 @@ UpgradeLog*.htm
 
 # Microsoft Fakes
 FakesAssemblies/
+
+# sublime
+*.sublime-project
+*.sublime-workspace
