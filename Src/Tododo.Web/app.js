@@ -4,7 +4,6 @@ var React = require("react");
 var FluxibleApp = require("fluxible");
 
 var routrPlugin = require("fluxible-plugin-routr");
-var fetchrPlugin = require("fluxible-plugin-fetchr");
 
 var AppPage = require("./components/AppPage.jsx");
 
@@ -17,5 +16,8 @@ app.plug(routrPlugin({
 }));
 
 app.registerStore(require("./stores/AppStore"));
+app.registerStore(require("./stores/SyncStore"));
+app.registerStore(require("./stores/TasksStore"));
+app.registerStore(require("./stores/NewTaskStore"));
 
 module.exports = app;

@@ -10,6 +10,7 @@ var react = require("react");
 
 var bodyParser = require("body-parser");
 var navigateAction = require("flux-router-component").navigateAction;
+var loadDataAction = require("./actions/loadData");
 
 var htmlComponent = react.createFactory(require("./components/Html.jsx"));
 
@@ -38,30 +39,39 @@ server.use(function (req, res, next) {
     var ac = context.getActionContext();
     debug("Executing navigate action");
     
-    ac.executeAction(navigateAction, {
-        url: req.url
-    }, function (err) {
-        if (err) {
-            handleError(err, next);
-            return;
-        }
-        debug("Exposing context state");
-        res.expose(app.dehydrate(context), "App");
-        
-        debug("Rendering Application component into html");
-        var AppComponent = app.getAppComponent();
-        var html = react.renderToStaticMarkup(htmlComponent({
-            title: "Tododo",
-            state: res.locals.state,
-            context: context.getComponentContext(),
-            markup: react.renderToString(AppComponent({
-                context: context.getComponentContext()
-            }))
-        }));
-        
-        debug("Sending markup");
-        res.write(html);
-        res.end();
+    ac.executeAction(loadDataAction, {
+        force: true
+    }, function(err) {
+            if (err) {
+                handleError(err, next);
+                return;
+            }
+
+            ac.executeAction(navigateAction, {
+                url: req.url
+            }, function (err) {
+                if (err) {
+                    handleError(err, next);
+                    return;
+                }
+                debug("Exposing context state");
+                res.expose(app.dehydrate(context), "App");
+                
+                debug("Rendering Application component into html");
+                var AppComponent = app.getAppComponent();
+                var html = react.renderToStaticMarkup(htmlComponent({
+                    title: "Tododo",
+                    state: res.locals.state,
+                    context: context.getComponentContext(),
+                    markup: react.renderToString(AppComponent({
+                        context: context.getComponentContext()
+                    }))
+                }));
+                
+                debug("Sending markup");
+                res.write(html);
+                res.end();
+            });
     });
 });
 

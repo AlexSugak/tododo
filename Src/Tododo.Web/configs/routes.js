@@ -17,6 +17,12 @@ module.exports = {
         page: "tasks",
         action: nothing
     },
+    task: {
+        path: "/task/:taskId",
+        method: "get",
+        page: "task",
+        action: nothing
+    },
     employees: {
         path: "/employees",
         method: "get",

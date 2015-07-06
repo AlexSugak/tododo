@@ -45,7 +45,7 @@ var AppPage = React.createClass({
 		return (
 			<div className="container">
 				<TopNav context={context} projectName="Tododo" route={page} />
-				<div className="jumbotron">
+				<div>
 					<ViewSelector context={context} page={page} params={params} />
 				</div>
 			</div>

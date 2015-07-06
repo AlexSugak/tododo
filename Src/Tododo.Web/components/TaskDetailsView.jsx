@@ -1,8 +1,8 @@
-﻿/** @jsx React.DOM */
+/** @jsx React.DOM */
 
 var React = require("react");
 
-var IndexView = React.createClass({
+var TaskDetailsView = React.createClass({
 	propTypes: {
 	},
 	statics: {
@@ -21,12 +21,12 @@ var IndexView = React.createClass({
 
 	render: function render() {
 		return (
-			<div className="jumbotron">
-				<h1>Index View Here</h1>
+			<div>
+				<h1>Task Details View Here</h1>
 			</div>
 		);
 	}
 });
 
 
-module.exports = IndexView;
+module.exports = TaskDetailsView;
