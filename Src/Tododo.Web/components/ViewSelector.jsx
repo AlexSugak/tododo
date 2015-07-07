@@ -4,6 +4,7 @@ var React = require("react");
 
 var IndexView = require("./IndexView");
 var TasksView = require("./TasksView");
+var TaskDetailsView = require("./TaskDetailsView");
 var EmployeesView = require("./EmployeesView");
 
 var ViewSelector = React.createClass({
@@ -20,11 +21,18 @@ var ViewSelector = React.createClass({
 		if (page === "tasks") {
 			return <TasksView context={context} />;
 		}
+		if (page === "task") {
+			var taskId = this.props.params.taskId;
+			if (taskId === undefined) {
+				throw new Error("Task Id must be specified");
+			}
+			return <TaskDetailsView context={context} taskId={taskId} />;
+		}
 		if (page === "employees") {
 			return <EmployeesView context={context} />;
 		}
 
-		return (<div>{page}</div>);
+		return (<div>[{page}] page not found</div>);
 	},
 
 	render: function render() {

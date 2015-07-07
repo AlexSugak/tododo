@@ -4,6 +4,7 @@ var React = require("react");
 var TasksStore = require("../stores/TasksStore");
 var StoreMixin = require("fluxible").StoreMixin;
 
+var NavLink = require("flux-router-component").NavLink;
 var NewTask = require("./NewTask");
 
 
@@ -39,8 +40,13 @@ var TasksView = React.createClass({
 
 		var items = [];
 		tasks.forEach(function (i) {
+			var path = context.makePath("task", {taskId: i.id});
 			items.push(
-				<li key={i.id} className="list-group-item">{i.name}</li>
+				<li key={i.id} className="list-group-item">
+					<NavLink context={context} href={path}>
+						{i.name}
+					</NavLink>
+				</li>
 			);
 		});
 
