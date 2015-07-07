@@ -6,7 +6,7 @@ var StoreMixin = require("fluxible").StoreMixin;
 
 var NavLink = require("flux-router-component").NavLink;
 var NewTask = require("./NewTask");
-
+var DeleteTask = require("./DeleteTask");
 
 var TasksView = React.createClass({
 	mixins: [StoreMixin],
@@ -42,10 +42,11 @@ var TasksView = React.createClass({
 		tasks.forEach(function (i) {
 			var path = context.makePath("task", {taskId: i.id});
 			items.push(
-				<li key={i.id} className="list-group-item">
+				<li key={i.id} className="list-group-item" style={{height:'70px'}}>
 					<NavLink context={context} href={path}>
 						{i.name}
 					</NavLink>
+					<DeleteTask context={context} taskId={i.id} />
 				</li>
 			);
 		});
@@ -54,7 +55,8 @@ var TasksView = React.createClass({
 			<div className="row">
 				<div className="col-md-6">
 					<ul className="list-group">
-						{items}					
+						{items}		
+						<br/>			
 						<NewTask context={context} />
 					</ul>
 				</div>

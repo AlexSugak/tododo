@@ -8,6 +8,7 @@ var TasksStore = createStore({
     
     handlers: {
     	"event:TaskAdded": "taskAdded",
+    	"event:TaskDeleted": "taskDeleted",
 		"event:TasksLoaded": "tasksLoaded"
     },
     tasksLoaded: function(tasks) {
@@ -21,6 +22,10 @@ var TasksStore = createStore({
 	},
 	taskAdded: function(task) {
 		this.map[task.id] = task;
+		this.emitChange();
+	},
+	taskDeleted: function(taskId) {
+		delete this.map[taskId];
 		this.emitChange();
 	},
 	getAllTasks: function() {

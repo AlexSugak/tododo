@@ -24,6 +24,8 @@ expressState.extend(server);
 server.use("/public", express.static(path.join(__dirname, "build")));
 server.use("/css", express.static(path.join(__dirname, "node_modules/bootstrap/dist/css")));
 server.use("/css", express.static(path.join(__dirname, "css")));
+server.use("/fonts", express.static(path.join(__dirname, "node_modules/bootstrap/dist/fonts")));
+
 server.use(bodyParser.json());
 
 function handleError(err, next) {
