@@ -20,6 +20,9 @@ var TasksStore = createStore({
 		});
 		this.emitChange();
 	},
+
+	// --- event handlers --- 
+
 	taskAdded: function(task) {
 		this.map[task.id] = task;
 		this.emitChange();
@@ -37,6 +40,10 @@ var TasksStore = createStore({
 
 		return items;
 	},
+
+
+	// --- queries --- 
+
 	getAllTasksCount: function() {
 		var map = this.map;
 		var count = 0;
