@@ -119,7 +119,9 @@ fi
 
 # 3. Webpack
 eval $NPM_CMD install webpack -g
+cd "$DEPLOYMENT_TARGET"
 eval webpack
+cd - > /dev/null
 
 ##################################################################################################################################
 
