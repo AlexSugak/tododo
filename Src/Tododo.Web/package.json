@@ -23,9 +23,9 @@
         "xml2js": "^0.4.4",
         "bootstrap": "~3.3.0",
         "react-bootstrap":  "~0.23.0",
-        "webpack": "^1.4.13"
+        "webpack": "^1.4.13",
+        "jsx-loader": "^0.12.2"
     },
     "devDependencies": {
-        "jsx-loader": "^0.12.2"
     }
 }
