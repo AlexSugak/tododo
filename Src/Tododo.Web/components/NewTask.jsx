@@ -11,7 +11,7 @@ var NewTaskStore = require("../stores/NewTaskStore");
 var NewTask = React.createClass({
 	mixins: [StoreMixin],
 	propTypes: {
-		context: React.PropTypes.object.isRequired,
+		context: React.PropTypes.object.isRequired
 	},
 
 	statics: {

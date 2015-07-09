@@ -22,7 +22,7 @@ var IndexView = React.createClass({
 	render: function render() {
 		return (
 			<div className="jumbotron">
-				<h1>Welcome to Tododo!</h1>
+				<h1>Welcome to amazing Tododo!</h1>
 			</div>
 		);
 	}
