@@ -3,7 +3,7 @@
 open System
 open Tododo.Shared
 open Swensen.Unquote
-open Xunit
+open Xunit.Extensions
 
 type TestItem = {
     Text: string

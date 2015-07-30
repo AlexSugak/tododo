@@ -7,27 +7,22 @@ open Swensen.Unquote
 open Tododo.Scheduling.Api
 open Tododo.Scheduling.Errors
 open Tododo.Shared
-open Xunit
+open Xunit.Extensions
+open Ploeh.AutoFixture.Xunit
 
-[<Fact>]
-let ``Post must return bad request on validation error`` () = 
+[<Theory; AutoData>]
+let ``Post returns bad request on validation error`` (model: MakeAppointmentModel) = 
     let imp _ = Failure(ValidationError("error"))
     use sut = new AppointmentsController(imp)
-    let model: MakeAppointmentModel = {
-        Date = "2015-04-06"
-        ClientName = "bob"}
 
     let result: IHttpActionResult = sut.Post model
 
-    test <@ result :? Results.BadRequestErrorMessageResult @>     
+    test <@ result :? Results.BadRequestErrorMessageResult @>   
 
-[<Fact>]
-let ``Post must return Accepted on success`` () = 
+[<Theory; AutoData>]
+let ``Post returns Accepted on success`` (model: MakeAppointmentModel) = 
     let imp _ = Success(())
     use sut = new AppointmentsController(imp)
-    let model: MakeAppointmentModel = {
-        Date = "2015-04-06"
-        ClientName = "bob"}
 
     let result: IHttpActionResult = sut.Post model
 
