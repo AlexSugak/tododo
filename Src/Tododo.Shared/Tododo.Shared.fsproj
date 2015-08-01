@@ -52,6 +52,7 @@
     <Compile Include="ROP.fs" />
     <Compile Include="Messaging.fs" />
     <Compile Include="Converting.fs" />
+    <Compile Include="Types.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
