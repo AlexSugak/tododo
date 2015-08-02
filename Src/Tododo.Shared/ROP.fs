@@ -1,17 +1,18 @@
-﻿[<AutoOpen>]
-module Tododo.Shared.ROP
+﻿namespace Tododo.Shared
 
+[<AutoOpen>]
+module ROP = 
 
-type Result<'TSuccess, 'TError> = 
-    | Success of 'TSuccess
-    | Failure of 'TError
+    type Result<'TSuccess, 'TError> = 
+        | Success of 'TSuccess
+        | Failure of 'TError
 
-let bind f x =
-    match x with
-        | Success s -> f s
-        | Failure f -> Failure f
+    let bind f x =
+        match x with
+            | Success s -> f s
+            | Failure f -> Failure f
 
-let map f x =
-    match x with
-        | Success s -> Success(f s)
-        | Failure f -> Failure f
+    let map f x =
+        match x with
+            | Success s -> Success(f s)
+            | Failure f -> Failure f

@@ -6,6 +6,7 @@ open Swensen.Unquote
 open FsCheck.Xunit
 open Xunit.Extensions
 open Tododo.Shared.Types
+open FsCheck
 
 [<Theory>]
 [<InlineData("a@b.com")>]
@@ -51,3 +52,4 @@ let ``createPhoneNumber returns correct value for invalid numbers``
     let expected : PhoneNumber option = None
 
     test <@ expected = result @>
+

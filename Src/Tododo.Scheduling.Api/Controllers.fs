@@ -20,12 +20,14 @@ type AppointmentsController
         x.Request.CreateResponse(HttpStatusCode.OK, "test all appointments")
 
     [<Route("{id:guid}")>]
-    member x.Get(id: Guid) = 
+    member x.Get(id: Guid) =
         x.Request.CreateResponse(HttpStatusCode.OK, "test appointment")
 
     [<Route("")>]
     member x.Post(appointment: MakeAppointmentModel) =
         match makeAppointmentImp appointment with 
         | Failure(ValidationError msg) -> x.BadRequest msg :> IHttpActionResult
-        | _ -> x.StatusCode HttpStatusCode.Accepted :> IHttpActionResult 
+        | Failure(InfrastructureError msg) -> x.BadRequest msg :> IHttpActionResult
+        | Failure(NotImplemented) -> x.BadRequest "not implemented" :> IHttpActionResult
+        | Success _ -> x.StatusCode HttpStatusCode.Accepted :> IHttpActionResult 
 

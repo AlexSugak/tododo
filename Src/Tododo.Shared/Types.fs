@@ -8,7 +8,7 @@ module EmailAddressType =
     type EmailAddress = EmailAddress of string
 
     let createEmailAddress (s:string) = 
-        if Regex.IsMatch(s,@"^\S+@\S+\.\S+$") 
+        if Regex.IsMatch(s, @"^\S+@\S+\.\S+$") 
             then Some (EmailAddress s)
             else None
 

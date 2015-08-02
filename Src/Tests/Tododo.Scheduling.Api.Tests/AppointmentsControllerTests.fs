@@ -20,6 +20,15 @@ let ``Post returns bad request on validation error`` (model: MakeAppointmentMode
     test <@ result :? Results.BadRequestErrorMessageResult @>   
 
 [<Theory; AutoData>]
+let ``Post returns bad request on infrastructure error`` (model: MakeAppointmentModel) = 
+    let imp _ = Failure(InfrastructureError("error"))
+    use sut = new AppointmentsController(imp)
+
+    let result: IHttpActionResult = sut.Post model
+
+    test <@ result :? Results.BadRequestErrorMessageResult @>   
+
+[<Theory; AutoData>]
 let ``Post returns Accepted on success`` (model: MakeAppointmentModel) = 
     let imp _ = Success(())
     use sut = new AppointmentsController(imp)
